@@ -1,0 +1,35 @@
+{
+  "name": "cps-advice",
+  "version": "0.1.0",
+  "description": "CPS-based advice library",
+  "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/nak2k/node-cps-advice/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.9.1"
+  },
+  "homepage": "https://github.com/nak2k/node-cps-advice",
+  "keywords": [
+    "advice",
+    "continuation",
+    "cps",
+    "fp"
+  ],
+  "license": "MIT",
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nak2k/node-cps-advice.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "postpublish": "npm-sns",
+    "test": "tape test/*.js"
+  },
+  "files": [
+    "README.md",
+    "lib/"
+  ]
+}
