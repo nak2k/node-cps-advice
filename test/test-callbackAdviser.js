@@ -1,6 +1,6 @@
 const test = require('tape');
 const {
-  callbackAdvice,
+  callbackAdviser,
 } = require('..');
 
 function sum() {
@@ -12,12 +12,12 @@ function sum() {
   callback(null, result);
 }
 
-test('test callbackAdvice()', t => {
+test('test callbackAdviser()', t => {
   t.plan(5);
 
   let step = 0;
 
-  const stepAdvice = expected => next => {
+  const stepAdviser = expected => next => {
     t.equal(++step, expected);
 
     return function() {
@@ -25,7 +25,7 @@ test('test callbackAdvice()', t => {
     };
   };
 
-  const advisedSum = callbackAdvice(stepAdvice(2))(stepAdvice(1)(sum));
+  const advisedSum = callbackAdviser(stepAdviser(2))(stepAdviser(1)(sum));
 
   advisedSum(1, 2, 3, (err, result) => {
     t.error(err);

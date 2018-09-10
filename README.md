@@ -8,7 +8,9 @@ CPS-based advice library.
 npm i cps-advice
 ```
 
-## Advice
+## Terminologies
+
+### Advice
 
 In this package, the Advice is defined as a function that returns a function that has a same form for an original function passed as an argument.
 In order to apply an advice, it calls the advice function with passing an original function as an argument.
@@ -31,9 +33,13 @@ const taskWithLogging = logAdvice(task);
 
 This package provides utilities to make the Advice easier to use when programming with [Continuation-passing style (CPS)](https://en.wikipedia.org/wiki/Continuation-passing_style).
 
+### Adviser
+
+The Adviser is defined as a function that generates an Advise.
+
 ## API
 
-### callbackAdvice(advice)
+### callbackAdviser(advice)
 
 Generate an advice that applies a specified advice to a callback.
 
@@ -48,7 +54,7 @@ const callbackLogAdvice = next => {
   return (err, result) => next(err, result);
 };
 
-callbackAdvice(callbackLogAdvice)(readFile)('path/to/file', (err, file) => {
+callbackAdviser(callbackLogAdvice)(readFile)('path/to/file', (err, file) => {
   // This callback is called after the callbackLogAdvice().
 });
 ```
