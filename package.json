@@ -1,6 +1,6 @@
 {
   "name": "cps-advice",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "CPS-based advice library",
   "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
   "bugs": {
