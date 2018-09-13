@@ -59,6 +59,13 @@ callbackAdviser(callbackLogAdvice)(readFile)('path/to/file', (err, file) => {
 });
 ```
 
+### mapAdviser(mapper)
+
+Generate an advice that applies a specified mapper function to a result of a callback.
+
+- `mapper(result)`
+    - A function that returns a mapped result.
+
 ## License
 
 MIT
